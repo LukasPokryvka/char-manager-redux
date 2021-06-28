@@ -1,0 +1,13 @@
+.app-info {
+	margin: 2rem auto;
+	width: 280px;
+}
+
+.app-info h1 {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.7);
+	text-transform: uppercase;
+	letter-spacing: 0.7px;
+	display: flex;
+	justify-content: space-between;
+}

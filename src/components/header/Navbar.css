@@ -1,0 +1,55 @@
+.navbar-custom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	padding: 0 0.5rem;
+}
+
+.navbar-title {
+	display: flex;
+	align-items: center;
+}
+.navbar-title h2 {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.7);
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 3px;
+}
+.navbar-title img {
+	width: 30px;
+	height: 40px;
+	margin-right: 0.5rem;
+}
+.navbar-title h2,
+.navbar-title img {
+	cursor: pointer;
+}
+
+.navbar-navigation a {
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.3rem 0.5rem;
+	color: white;
+	text-decoration: none;
+	border-radius: 10px;
+	transition: all 0.1s ease-in;
+}
+
+.sign-up {
+	border: 2px solid #c192fc;
+	margin-left: 2px;
+}
+.sign-up:hover {
+	background-color: #c192fc;
+}
+
+.sign-in {
+	border: 2px solid transparent;
+}
+.sign-in:hover {
+	background-color: #1ddecb;
+	border: 2px solid #1ddecb;
+}

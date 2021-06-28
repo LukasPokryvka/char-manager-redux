@@ -1,0 +1,40 @@
+.landing-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 50px);
+}
+
+.landing-page-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.landing-page-text {
+	text-align: left;
+	flex-basis: 50%;
+}
+.landing-page-text h1,
+.landing-page-text h2 {
+	text-transform: uppercase;
+}
+.landing-page-text h1 {
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: 500;
+	font-size: 1.3rem;
+	letter-spacing: 3px;
+}
+.landing-page-text h1 span {
+	color: #c495fd;
+}
+.landing-page-text h2 {
+	font-size: 1rem;
+	color: rgba(255, 255, 255, 0.6);
+	font-weight: 400;
+	letter-spacing: 3px;
+}
+
+.landing-page-img img {
+	width: 150px;
+}

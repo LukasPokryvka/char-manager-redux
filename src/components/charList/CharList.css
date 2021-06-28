@@ -1,0 +1,33 @@
+.char-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+}
+
+.char-list > li {
+	margin: 10px;
+	background-color: #2a3037;
+	color: white;
+	padding: 1rem;
+	position: relative;
+	max-width: 250px;
+	border-radius: 5px;
+}
+
+.char-list h2 {
+	color: #c192fc;
+	font-size: 1.5rem;
+	line-height: 1;
+}
+
+.char-list h3 {
+	color: #1ddecb;
+	font-size: 1.3rem;
+}
+.progress {
+	height: 0.5rem;
+	margin: 7px 0;
+}
