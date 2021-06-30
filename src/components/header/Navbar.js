@@ -12,7 +12,7 @@ import history from '../../history'
 class Navbar extends React.Component {
 	handleOnLogoClick = () => {
 		this.props.isLoggedIn
-			? history.push('/')
+			? history.push('/charmanager')
 			: history.push('/welcome')
 	}
 
@@ -29,30 +29,44 @@ class Navbar extends React.Component {
 
 				{!this.props.isLoggedIn && (
 					<div className="navbar-navigation">
+						<Link to="/docs" className="sign-in">
+							Docs
+						</Link>
+						<div className="navbar-vertical"></div>
 						<Link
 							to="/login"
 							className="sign-in"
 							onClick={() => this.props.logoutUser()}
 						>
-							Sign In
+							Login
 						</Link>
 						<Link
 							to="/register"
 							className="sign-up"
 							onClick={() => this.props.registrationReset()}
 						>
-							Sign Up
+							Register
 						</Link>
 					</div>
 				)}
 				{this.props.isLoggedIn && (
 					<div className="navbar-navigation">
 						<Link
+							to="/charmanager/delete"
+							className="sign-in"
+						>
+							Delete
+						</Link>
+						<Link to="/docs" className="sign-in">
+							Docs
+						</Link>
+						<div className="navbar-vertical"></div>
+						<Link
 							to="/welcome"
 							className="sign-up"
 							onClick={() => this.props.logoutUser()}
 						>
-							Sign Out
+							Logout
 						</Link>
 					</div>
 				)}

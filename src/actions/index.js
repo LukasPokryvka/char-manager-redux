@@ -13,10 +13,9 @@ export const fetchChars = (charId) => async (dispatch) => {
 				payload: response.data
 			})
 		})
-		.catch((error) => {
+		.catch(() => {
 			dispatch({
-				type: 'CHARS_ERROR',
-				payload: error.response.data
+				type: 'CHARS_ERROR'
 			})
 		})
 }
@@ -75,4 +74,25 @@ export const registrationReset = () => {
 	return {
 		type: 'REGISTER_RESET'
 	}
+}
+
+export const forgottenAccount = (email) => (dispatch) => {
+	charManager
+		.get('/forgottenAccount', {
+			params: {
+				email: email
+			}
+		})
+		.then((response) => {
+			dispatch({
+				type: 'REGISTER_USER',
+				payload: response.data
+			})
+		})
+		.catch((error) => {
+			dispatch({
+				type: 'REGISTER_USER',
+				payload: error.response.data
+			})
+		})
 }

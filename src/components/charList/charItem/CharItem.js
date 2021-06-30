@@ -58,9 +58,7 @@ const CharItem = ({ char }) => {
 					text="Tracing:"
 					value={char.tracing + ''}
 				/>
-				{char.guild && (
-					<CharDefault text="Guild:" value={char.guild} />
-				)}
+				<CharDefault text="Guild:" value={char.guild} />
 			</ul>
 		</li>
 	)

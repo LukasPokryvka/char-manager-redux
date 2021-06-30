@@ -28,6 +28,10 @@
 	cursor: pointer;
 }
 
+.navbar-navigation {
+	display: flex;
+	align-items: center;
+}
 .navbar-navigation a {
 	cursor: pointer;
 	display: inline-block;
@@ -52,4 +56,12 @@
 .sign-in:hover {
 	background-color: #1ddecb;
 	border: 2px solid #1ddecb;
+}
+
+.navbar-vertical {
+	display: inline-block;
+	width: 2px;
+	background-color: rgba(255, 255, 255, 0.3);
+	height: 15px;
+	margin: 0 5px;
 }

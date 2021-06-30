@@ -22,6 +22,9 @@ export const charsReducer = (state = defConfig, action) => {
 				lastUpdated: new Date().toLocaleTimeString()
 			}
 
+		case 'CHARS_ERROR':
+			return state
+
 		default:
 			return state
 	}

@@ -4,6 +4,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Loader from 'react-loader-spinner'
 import { connect } from 'react-redux'
 import { loginUser, logoutUser } from '../../actions'
+import { Link } from 'react-router-dom'
 import history from '../../history'
 
 class Login extends React.Component {
@@ -25,7 +26,7 @@ class Login extends React.Component {
 				isLoading: false
 			})
 			if (this.props.logUser.isLoggedIn) {
-				history.push('/')
+				history.push('/charmanager')
 			}
 		}
 	}
@@ -43,9 +44,9 @@ class Login extends React.Component {
 	}
 
 	checkIfIdIsValid = () => {
-		// const idRegex = /^Manager_+[a-zA-Z0-9]{5,10}$/
-		const idRegex = /^[a-zA-Z0-9]{5,10}$/
-		if (idRegex.test(this.state.userId)) {
+		// const idRegex = /^Manager_+[a-zA-Z0-9]{10}$/
+		// const idRegex = /^[a-zA-Z0-9]{5,20}$/
+		if (true) {
 			this.setState({ isIdValid: true })
 			return true
 		} else {
@@ -141,7 +142,7 @@ class Login extends React.Component {
 			return (
 				<div className="login">
 					<div className="login-title">
-						<h1>Signin with your credentials.</h1>
+						<h1>Login with your credentials.</h1>
 						<h2>
 							Your credentials are in your registration
 							email.
@@ -164,6 +165,14 @@ class Login extends React.Component {
 								value={this.state.userPwd}
 								onChange={this.handlePwdChange}
 							/>
+							<div>
+								<Link
+									to="/forgottenAccount"
+									className="login-form-forgotten"
+								>
+									Forgot your account?
+								</Link>
+							</div>
 							{this.userPwdErrorWarning()}
 						</div>
 						<div className="login-submit">

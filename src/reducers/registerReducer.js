@@ -1,7 +1,7 @@
 const defaultConfig = {
-	response: '',
-	alreadyRegistered: null,
-	somethingWrong: null
+	success: null,
+	error: null,
+	resolution: ''
 }
 
 export const registerReducer = (
@@ -12,25 +12,25 @@ export const registerReducer = (
 		case 'REGISTER_USER':
 			return {
 				...state,
-				response: action.payload.response,
-				alreadyRegistered: action.payload.alreadyRegistered,
-				somethingWrong: action.payload.somethingWrong
+				success: action.payload.success,
+				error: action.payload.error,
+				resolution: action.payload.resolution
 			}
 
 		case 'REGISTER_ERROR':
 			return {
 				...state,
-				response: action.payload.response,
-				alreadyRegistered: action.payload.alreadyRegistered,
-				somethingWrong: action.payload.somethingWrong
+				success: action.payload.success,
+				error: action.payload.error,
+				resolution: action.payload.resolution
 			}
 
 		case 'REGISTER_RESET':
 			return {
 				...state,
-				response: defaultConfig.response,
-				alreadyRegistered: defaultConfig.alreadyRegistered,
-				somethingWrong: defaultConfig.somethingWrong
+				success: defaultConfig.success,
+				error: defaultConfig.error,
+				resolution: defaultConfig.resolution
 			}
 
 		default:

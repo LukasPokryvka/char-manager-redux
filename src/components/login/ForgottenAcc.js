@@ -1,18 +1,17 @@
 import React from 'react'
-import './Register.css'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Loader from 'react-loader-spinner'
 import { connect } from 'react-redux'
 import {
-	registerUser,
-	registrationReset
+	registrationReset,
+	forgottenAccount
 } from '../../actions'
 
-class Register extends React.Component {
+class ForgottenAcc extends React.Component {
 	state = {
 		email: '',
-		isValid: false,
 		isTouched: false,
+		isValid: false,
 		isLoading: false
 	}
 
@@ -33,14 +32,6 @@ class Register extends React.Component {
 		}
 	}
 
-	handleChange = (e) => {
-		this.setState({ email: e.target.value }, () => {
-			if (this.state.isTouched) {
-				this.checkIfFormIsValid()
-			}
-		})
-	}
-
 	handleRegisterSubmit = (e) => {
 		e.preventDefault()
 		this.setState({ isTouched: true })
@@ -49,16 +40,24 @@ class Register extends React.Component {
 			shouldRegister = this.checkIfFormIsValid()
 			if (this.state.isValid || shouldRegister) {
 				this.setState({ isLoading: true }, () => {
-					this.props.registerUser(this.state.email)
+					this.props.forgottenAccount(this.state.email)
 					this.setState({ email: '' })
 				})
 			}
 		} else if (this.state.isValid) {
 			this.setState({ isLoading: true }, () => {
-				this.props.registerUser(this.state.email)
+				this.props.forgottenAccount(this.state.email)
 				this.setState({ email: '' })
 			})
 		}
+	}
+
+	handleChange = (e) => {
+		this.setState({ email: e.target.value }, () => {
+			if (this.state.isTouched) {
+				this.checkIfFormIsValid()
+			}
+		})
 	}
 
 	checkIfFormIsValid = () => {
@@ -101,10 +100,9 @@ class Register extends React.Component {
 			return (
 				<div className="register">
 					<div className="register-title">
-						<h1>Register with your email.</h1>
+						<h1>Account recovery.</h1>
 						<h2>
-							After registration, you will receive login
-							information.
+							Give us your email to reset your credentials.
 						</h2>
 					</div>
 					<form onSubmit={this.handleRegisterSubmit}>
@@ -121,7 +119,7 @@ class Register extends React.Component {
 								type="submit"
 								onClick={this.handleRegisterSubmit}
 							>
-								Register
+								Recover
 							</button>
 						</div>
 					</form>
@@ -129,15 +127,14 @@ class Register extends React.Component {
 			)
 		} else if (
 			this.props.regUser.resolution ===
-			"Email found in database. Can't register."
+			'Email not found in database.'
 		) {
 			return (
 				<div className="register">
 					<div className="register-title">
 						<h1>We are sorry.</h1>
 						<h2>
-							It looks like this email is already
-							registered. Try different email.
+							This email is not registered. Try it again.
 						</h2>
 					</div>
 					<form onSubmit={this.handleRegisterSubmit}>
@@ -154,7 +151,7 @@ class Register extends React.Component {
 								type="submit"
 								onClick={this.handleRegisterSubmit}
 							>
-								Register
+								Recover
 							</button>
 						</div>
 					</form>
@@ -165,10 +162,7 @@ class Register extends React.Component {
 				<div className="register">
 					<div className="register-title">
 						<h1>Success!</h1>
-						<h2>
-							Your registration was successful. Check your
-							email for details.
-						</h2>
+						<h2>Check your email for verification link.</h2>
 					</div>
 				</div>
 			)
@@ -187,6 +181,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-	registerUser,
-	registrationReset
-})(Register)
+	registrationReset,
+	forgottenAccount
+})(ForgottenAcc)
