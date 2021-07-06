@@ -19,8 +19,8 @@
 	letter-spacing: 3px;
 }
 .navbar-title img {
-	width: 30px;
-	height: 40px;
+	width: 50px;
+	height: 35px;
 	margin-right: 0.5rem;
 }
 .navbar-title h2,
@@ -64,4 +64,28 @@
 	background-color: rgba(255, 255, 255, 0.3);
 	height: 15px;
 	margin: 0 5px;
+}
+
+@media (max-width: 470px) {
+	.navbar-custom {
+		flex-flow: column-reverse;
+		height: 120px;
+		padding-top: 0.7rem;
+	}
+
+	.navbar-navigation {
+		width: 100%;
+		justify-content: flex-end;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		padding-bottom: 0.7rem;
+	}
+
+	.navbar-navigation > a:first-child {
+		margin-right: auto;
+		border: 2px solid #1ddecb;
+	}
+
+	.navbar-vertical {
+		display: none;
+	}
 }

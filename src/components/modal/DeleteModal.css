@@ -67,3 +67,12 @@ h2 {
 .is-valid {
 	border: 1px solid #48c78e;
 }
+
+@media (max-width: 400px) {
+	.modal-content h1 {
+		font-size: 1.6rem;
+	}
+	.modal-content h2 {
+		font-size: 1rem;
+	}
+}

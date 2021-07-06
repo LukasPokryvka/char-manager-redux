@@ -99,3 +99,21 @@
 	color: white;
 	opacity: 1;
 }
+
+@media (max-width: 650px) {
+	.login {
+		padding: 0 1rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.login-title h1 {
+		font-size: 1.7rem;
+	}
+}
+
+@media (max-width: 450px) {
+	.login {
+		height: calc(100vh - 120px);
+	}
+}

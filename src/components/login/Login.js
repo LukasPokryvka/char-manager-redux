@@ -46,13 +46,14 @@ class Login extends React.Component {
 	checkIfIdIsValid = () => {
 		// const idRegex = /^Manager_+[a-zA-Z0-9]{10}$/
 		// const idRegex = /^[a-zA-Z0-9]{5,20}$/
-		if (true) {
+		if (this.state.userId) {
 			this.setState({ isIdValid: true })
 			return true
-		} else {
-			this.setState({ isIdValid: false })
-			return false
 		}
+		// } else {
+		// 	this.setState({ isIdValid: false })
+		// 	return false
+		// }
 	}
 
 	checkIfPwdIsValid = () => {

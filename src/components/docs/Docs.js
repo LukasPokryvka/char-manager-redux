@@ -27,7 +27,7 @@ const Docs = (props) => {
 					on the screenshot.
 				</h2>
 				<code>
-					168.235.110.165:8081/postChars?accountId=
+					api.charmanager.xyz/postChars?accountId=
 					{props.logUser.accId}
 				</code>
 				<h2>

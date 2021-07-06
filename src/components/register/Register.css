@@ -69,3 +69,24 @@
 .register-verification-loading {
 	margin-top: 2rem;
 }
+
+@media (max-width: 600px) {
+	.register {
+		padding: 0 1rem;
+	}
+	.register-title h1 {
+		font-size: 1.7rem;
+	}
+	.register form {
+		width: 100%;
+	}
+	.register-form {
+		width: 100%;
+	}
+}
+
+@media (max-width: 450px) {
+	.register {
+		height: calc(100vh - 120px);
+	}
+}

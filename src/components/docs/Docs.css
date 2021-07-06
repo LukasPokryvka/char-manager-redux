@@ -46,3 +46,24 @@
 .docs-text:last-child {
 	margin-bottom: 2rem;
 }
+
+@media (max-width: 470px) {
+	.docs-title {
+		margin: 1rem 0;
+	}
+	.docs {
+		padding: 1rem;
+	}
+	.docs-text {
+		width: 100%;
+	}
+	.docs-text:last-child {
+		margin-bottom: 0;
+	}
+	.docs-text h2 {
+		font-size: 1.1rem;
+	}
+	.docs-img img {
+		max-width: 100%;
+	}
+}

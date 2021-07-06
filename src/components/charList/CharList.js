@@ -12,22 +12,39 @@ class CharList extends React.Component {
 	state = {
 		fetchInterval: null
 	}
+
+	setFetchInterval = () => {
+		this.props.fetchChars(this.props.loggedUser.accId)
+		const interval = setInterval(() => {
+			this.props.fetchChars(this.props.loggedUser.accId)
+		}, 5000)
+		this.setState({ fetchInterval: interval })
+	}
+
 	componentDidMount() {
 		if (!this.props.loggedUser.isLoggedIn) {
 			if (this.state.fetchInterval) {
 				clearInterval(this.state.fetchInterval)
 			}
 			history.push('/welcome')
-		} else if (!this.state.fetchInterval) {
-			this.props.fetchChars(this.props.loggedUser.accId)
-			const interval = setInterval(() => {
-				this.props.fetchChars(this.props.loggedUser.accId)
-			}, 5000)
-			this.setState({ fetchInterval: interval })
+		} else {
+			this.setFetchInterval()
+			document.addEventListener('visibilitychange', () => {
+				if (
+					document.visibilityState === 'visible' &&
+					!this.state.fetchInterval
+				) {
+					this.setFetchInterval()
+				} else if (document.visibilityState === 'hidden') {
+					clearInterval(this.state.fetchInterval)
+					this.setState({ fetchInterval: null })
+				}
+			})
 		}
 	}
 	componentWillUnmount() {
 		clearInterval(this.state.fetchInterval)
+		console.log('ima unmounting')
 	}
 
 	render() {
